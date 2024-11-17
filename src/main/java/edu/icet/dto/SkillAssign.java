@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SkillAssign {
-    private String skillAssignId;
+    private Long skillAssignId;
     private String proficiency;
     private String yearsOfExperience;
     private String skillId;
-    private String employeeId;
+    private Long employeeId;
 }

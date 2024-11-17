@@ -14,8 +14,9 @@ import lombok.ToString;
 @Table(name = "skill_assign")
 public class SkillAssignEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "skill_assign_id")
-    private String skillAssignId;
+    private Long skillAssignId;
 
     @Column(name = "proficiency", nullable = false)
     private String proficiency;

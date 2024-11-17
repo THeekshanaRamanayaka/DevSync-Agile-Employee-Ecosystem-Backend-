@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PerformanceRating {
-    private String ratingId;
+    private Long ratingId;
     private String technicalSkill;
     private String communication;
     private String teamwork;
@@ -18,5 +18,5 @@ public class PerformanceRating {
     private String initiative;
     private LocalDate updatedAt;
     private String performanceId;
-    private String employeeId;
+    private Long employeeId;
 }

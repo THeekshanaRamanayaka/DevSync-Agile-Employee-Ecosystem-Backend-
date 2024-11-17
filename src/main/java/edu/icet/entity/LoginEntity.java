@@ -16,7 +16,7 @@ public class LoginEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "login_id")
-    private String loginId;
+    private Long loginId;
 
     @Column(name = "email", unique = true, nullable = false)
     private String email;

@@ -16,8 +16,9 @@ import java.time.LocalDate;
 @Table(name = "task")
 public class TaskEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "task_id")
-    private String taskId;
+    private Long taskId;
 
     @Column(name = "task_description", nullable = false)
     private String taskDescription;

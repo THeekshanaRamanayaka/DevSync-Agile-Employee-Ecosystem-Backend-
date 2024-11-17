@@ -18,7 +18,7 @@ public class ProjectEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "project_id")
-    private String projectId;
+    private Long projectId;
 
     @Column(name = "project_name", nullable = false)
     private String projectName;

@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @ToString
 public class Department {
-    private String departmentId;
+    private Long departmentId;
     private String departmentName;
     private Integer headcount;
     private String departmentHead;

@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @ToString
 public class Performance {
-    private String performanceId;
+    private Long performanceId;
     private LocalDate reviewDate;
     private String reviewComment;
     private String reviewStatus;

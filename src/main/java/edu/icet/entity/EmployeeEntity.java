@@ -18,7 +18,7 @@ public class EmployeeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "employee_id")
-    private String employeeId;
+    private Long employeeId;
 
     @Column(name = "employee_name", nullable = false)
     private String employeeName;
@@ -29,7 +29,7 @@ public class EmployeeEntity {
     @Column(name = "employee_position", nullable = false)
     private String position;
 
-    @Column(name = "contact_number", nullable = false)
+    @Column(name = "contact", nullable = false)
     private String contactNumber;
 
     @Column(name = "address", nullable = false)
@@ -50,7 +50,10 @@ public class EmployeeEntity {
     @Column(name = "join_date", nullable = false, updatable = false)
     private LocalDate joinDate;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "department_id")
     private DepartmentEntity departmentEntity;
+
+    @Column(name = "department_id", insertable = false, updatable = false)
+    private Long departmentId;
 }

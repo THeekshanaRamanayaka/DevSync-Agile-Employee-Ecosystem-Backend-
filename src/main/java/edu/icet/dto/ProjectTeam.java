@@ -10,6 +10,6 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class ProjectTeam {
-    private String projectId;
-    private String employeeId;
+    private Long projectId;
+    private Long employeeId;
 }

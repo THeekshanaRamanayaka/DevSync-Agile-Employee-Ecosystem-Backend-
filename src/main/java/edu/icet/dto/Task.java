@@ -12,10 +12,10 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @ToString
 public class Task {
-    private String taskId;
+    private Long taskId;
     private String taskDescription;
     private String taskStatus;
     private LocalDate assignDate;
-    private String projectId;
-    private String employeeId;
+    private Long projectId;
+    private Long employeeId;
 }

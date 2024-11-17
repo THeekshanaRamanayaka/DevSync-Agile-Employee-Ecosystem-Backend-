@@ -17,8 +17,9 @@ import java.time.LocalDate;
 @Table(name = "performance_ratings")
 public class PerformanceRatingsEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "rating_id")
-    private String ratingId;
+    private Long ratingId;
 
     @Column(name = "technical_skill", nullable = false)
     private String technicalSkill;

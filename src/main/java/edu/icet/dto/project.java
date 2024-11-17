@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @ToString
 public class project {
-    private String projectId;
+    private Long projectId;
     private String projectName;
     private String projectDescription;
     private String duration;
@@ -21,5 +21,5 @@ public class project {
     private String status;
     private LocalDate startingDate;
     private LocalDate endDate;
-    private String departmentId;
+    private Long departmentId;
 }
