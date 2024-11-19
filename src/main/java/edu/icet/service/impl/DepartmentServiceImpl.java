@@ -20,7 +20,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     private final ModelMapper modelMapper;
 
     @Override
-    public Department saveDepartment(Department department) {
+    public void saveDepartment(Department department) {
         if (departmentRepository.existsByDepartmentName(department.getDepartmentName())) {
             throw new RuntimeException("Department already exists with name: " + department.getDepartmentName());
         }
@@ -30,7 +30,7 @@ public class DepartmentServiceImpl implements DepartmentService {
         departmentEntity.setStatus("Active");
 
         DepartmentEntity savedEntity = departmentRepository.save(departmentEntity);
-        return modelMapper.map(savedEntity, Department.class);
+        modelMapper.map(savedEntity, Department.class);
     }
 
     @Override
@@ -48,7 +48,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public Department updateDepartment(Long id, Department department) {
+    public void updateDepartment(Long id, Department department) {
         DepartmentEntity existingDepartment = departmentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Department not found with id: " + id));
 
@@ -62,7 +62,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
         DepartmentEntity departmentEntity = modelMapper.map(department, DepartmentEntity.class);
         DepartmentEntity updatedEntity = departmentRepository.save(departmentEntity);
-        return modelMapper.map(updatedEntity, Department.class);
+        modelMapper.map(updatedEntity, Department.class);
     }
 
     @Override

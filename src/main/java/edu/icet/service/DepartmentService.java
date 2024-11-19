@@ -4,9 +4,9 @@ import edu.icet.dto.Department;
 import java.util.List;
 
 public interface DepartmentService {
-    Department saveDepartment(Department department);
+    void saveDepartment(Department department);
     List<Department> getAllDepartments();
     Department getDepartmentById(Long id);
-    Department updateDepartment(Long id, Department department);
+    void updateDepartment(Long id, Department department);
     void deactivateDepartment(Long id);
 }

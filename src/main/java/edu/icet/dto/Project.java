@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class project {
+public class Project {
     private Long projectId;
     private String projectName;
     private String projectDescription;

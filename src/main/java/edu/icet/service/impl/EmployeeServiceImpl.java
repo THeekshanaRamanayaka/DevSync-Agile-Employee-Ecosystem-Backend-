@@ -30,7 +30,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     private final ModelMapper modelMapper;
 
     @Override
-    public Employee saveEmployee(Employee employee) {
+    public void saveEmployee(Employee employee) {
         EmployeeEntity employeeEntity = modelMapper.map(employee, EmployeeEntity.class);
         employeeEntity.setJoinDate(LocalDate.parse(employee.getJoinDate()));
 
@@ -49,7 +49,7 @@ public class EmployeeServiceImpl implements EmployeeService {
             loginRepository.save(loginEntity);
         }
 
-        return modelMapper.map(savedEmployee, Employee.class);
+        modelMapper.map(savedEmployee, Employee.class);
     }
 
     @Override
@@ -68,7 +68,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee updateEmployee(Employee employee) {
+    public void updateEmployee(Employee employee) {
         employeeRepository.findById(employee.getEmployeeId())
                 .orElseThrow(() -> new RuntimeException("Employee not found with id: " + employee.getEmployeeId()));
 
@@ -76,7 +76,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeEntity.setJoinDate(LocalDate.parse(employee.getJoinDate()));
 
         EmployeeEntity updatedEmployee = employeeRepository.save(employeeEntity);
-        return modelMapper.map(updatedEmployee, Employee.class);
+        modelMapper.map(updatedEmployee, Employee.class);
     }
 
     @Override
