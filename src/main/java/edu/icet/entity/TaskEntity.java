@@ -33,7 +33,7 @@ public class TaskEntity {
     @JoinColumn(name = "project_id", nullable = false)
     private ProjectEntity project;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "employee_id", nullable = false)
     private EmployeeEntity employee;
 }
