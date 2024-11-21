@@ -10,8 +10,6 @@ import java.util.Collection;
 
 @Repository
 public interface SkillAssignRepository extends JpaRepository<SkillAssignEntity, Long> {
-//    Collection<Object> findByEmployee_EmployeeId(Long employeeId);
-
     @Query(value = "SELECT * FROM skill_assign WHERE employee_id = :employeeId", nativeQuery = true)
     Collection<SkillAssignEntity> findByEmployee_EmployeeIdNative(@Param("employeeId") Long employeeId);
 }
