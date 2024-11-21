@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7275e132-5aec-41df-b37f-58efb6d6a6e8" name="Changes" comment="Skill assignment feature update">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/icet/controller/PerformanceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/icet/controller/PerformanceRatingsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/icet/repository/PerformanceRatingsRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/icet/repository/PerformanceRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/PerformanceRatingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/PerformanceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/impl/PerformanceRatingServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/impl/PerformanceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/repository/SkillAssignRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/repository/SkillAssignRepository.java" afterDir="false" />
+    <list default="true" id="7275e132-5aec-41df-b37f-58efb6d6a6e8" name="Changes" comment="Performance and PerformanceRating feature implement complete">
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/controller/PerformanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/controller/PerformanceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/controller/PerformanceRatingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/controller/PerformanceRatingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/controller/SkillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/controller/SkillController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/service/PerformanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/PerformanceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/service/SkillAssignService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/SkillAssignService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/service/SkillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/SkillService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/TaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/service/impl/PerformanceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/impl/PerformanceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/service/impl/SkillAssignServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/impl/SkillAssignServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/service/impl/SkillServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/impl/SkillServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/service/impl/TaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/impl/TaskServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732175134153</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Performance and PerformanceRating feature implement complete">
+      <option name="closed" value="true" />
+      <created>1732184809035</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732184809035</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -171,6 +182,7 @@
     <MESSAGE value="Task feature implement successful" />
     <MESSAGE value="Skill and skill assign features implement successful and fix some errors in Task and ProjectTeam features" />
     <MESSAGE value="Skill assignment feature update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Skill assignment feature update" />
+    <MESSAGE value="Performance and PerformanceRating feature implement complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Performance and PerformanceRating feature implement complete" />
   </component>
 </project>

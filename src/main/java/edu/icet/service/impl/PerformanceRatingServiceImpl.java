@@ -27,7 +27,7 @@ public class PerformanceRatingServiceImpl implements PerformanceRatingService {
 
 
     @Override
-    public PerformanceRating createPerformanceRating(PerformanceRating performanceRating) {
+    public void createPerformanceRating(PerformanceRating performanceRating) {
         PerformanceEntity performance = performanceRepository.findById(Long.parseLong(performanceRating.getPerformanceId()))
                 .orElseThrow(() -> new EntityNotFoundException("Performance not found"));
 
@@ -39,11 +39,11 @@ public class PerformanceRatingServiceImpl implements PerformanceRatingService {
         performanceRatingsEntity.setEmployee(employee);
 
         PerformanceRatingsEntity savedPerformanceRating = performanceRatingsRepository.save(performanceRatingsEntity);
-        return modelMapper.map(savedPerformanceRating, PerformanceRating.class);
+        modelMapper.map(savedPerformanceRating, PerformanceRating.class);
     }
 
     @Override
-    public PerformanceRating updatePerformanceRating(Long ratingId, PerformanceRating performanceRating) {
+    public void updatePerformanceRating(Long ratingId, PerformanceRating performanceRating) {
         PerformanceRatingsEntity existingPerformanceRating = performanceRatingsRepository.findById(ratingId)
                 .orElseThrow(() -> new EntityNotFoundException("Performance Rating not found"));
 
@@ -66,7 +66,7 @@ public class PerformanceRatingServiceImpl implements PerformanceRatingService {
         }
 
         PerformanceRatingsEntity updatedPerformanceRating = performanceRatingsRepository.save(existingPerformanceRating);
-        return modelMapper.map(updatedPerformanceRating, PerformanceRating.class);
+        modelMapper.map(updatedPerformanceRating, PerformanceRating.class);
     }
 
     @Override

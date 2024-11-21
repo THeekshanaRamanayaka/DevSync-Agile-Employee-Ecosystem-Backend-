@@ -28,7 +28,7 @@ public class TaskServiceImpl implements TaskService {
     private final ModelMapper modelMapper;
 
     @Override
-    public Task createTask(Task task) {
+    public void createTask(Task task) {
         ProjectEntity project = projectRepository.findById(task.getProjectId())
                 .orElseThrow(() -> new EntityNotFoundException("Project not found"));
 
@@ -40,11 +40,11 @@ public class TaskServiceImpl implements TaskService {
         taskEntity.setEmployee(employee);
 
         TaskEntity savedTask = taskRepository.save(taskEntity);
-        return modelMapper.map(savedTask, Task.class);
+        modelMapper.map(savedTask, Task.class);
     }
 
     @Override
-    public Task updateTask(Long taskId, Task task) {
+    public void updateTask(Long taskId, Task task) {
         TaskEntity existingTask = taskRepository.findById(taskId)
                 .orElseThrow(() -> new EntityNotFoundException("Task not found"));
 
@@ -65,7 +65,7 @@ public class TaskServiceImpl implements TaskService {
         }
 
         TaskEntity updatedTask = taskRepository.save(existingTask);
-        return modelMapper.map(updatedTask, Task.class);
+        modelMapper.map(updatedTask, Task.class);
     }
 
     @Override

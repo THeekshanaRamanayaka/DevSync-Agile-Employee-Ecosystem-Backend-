@@ -20,21 +20,21 @@ public class SkillServiceImpl implements SkillService {
     private final ModelMapper modelMapper;
 
     @Override
-    public Skill createSkill(Skill skill) {
+    public void createSkill(Skill skill) {
         SkillEntity skillEntity = modelMapper.map(skill, SkillEntity.class);
         SkillEntity savedSkill = skillRepository.save(skillEntity);
-        return modelMapper.map(savedSkill, Skill.class);
+        modelMapper.map(savedSkill, Skill.class);
     }
 
     @Override
-    public Skill updateSkill(Long skillId, Skill skill) {
+    public void updateSkill(Long skillId, Skill skill) {
         SkillEntity existingSkill = skillRepository.findById(skillId)
                 .orElseThrow(() -> new EntityNotFoundException("Skill not found"));
 
         existingSkill.setSkillName(skill.getSkillName());
 
         SkillEntity updatedSkill = skillRepository.save(existingSkill);
-        return modelMapper.map(updatedSkill, Skill.class);
+        modelMapper.map(updatedSkill, Skill.class);
     }
 
     @Override

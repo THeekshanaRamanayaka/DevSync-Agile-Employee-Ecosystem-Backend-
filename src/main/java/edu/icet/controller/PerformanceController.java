@@ -21,10 +21,9 @@ public class PerformanceController {
     public ResponseEntity<Map<String, Object>> createPerformanceReview(@RequestBody Performance performance) {
         Map<String, Object> response = new HashMap<>();
         try {
-            Performance savedPerformance = performanceService.createPerformanceReview(performance);
+            performanceService.createPerformanceReview(performance);
             response.put("status", "SUCCESS");
             response.put("message", "Performance review created successfully");
-            response.put("data", savedPerformance);
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             response.put("status", "ERROR");
@@ -37,10 +36,9 @@ public class PerformanceController {
     public ResponseEntity<Map<String, Object>> getAllPerformanceReviews() {
         Map<String, Object> response = new HashMap<>();
         try {
-            List<Performance> performances = performanceService.getAllPerformanceReviews();
             response.put("status", "SUCCESS");
             response.put("message", "Performance reviews retrieved successfully");
-            response.put("data", performances);
+            response.put("data", performanceService.getAllPerformanceReviews());
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             response.put("status", "ERROR");
@@ -70,10 +68,9 @@ public class PerformanceController {
     public ResponseEntity<Map<String, Object>> updatePerformanceReview(@PathVariable Long id, @RequestBody Performance performance) {
         Map<String, Object> response = new HashMap<>();
         try {
-            Performance updatedPerformance = performanceService.updatePerformanceReview(id, performance);
+            performanceService.updatePerformanceReview(id, performance);
             response.put("status", "SUCCESS");
             response.put("message", "Performance review updated successfully");
-            response.put("data", updatedPerformance);
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             response.put("status", "ERROR");

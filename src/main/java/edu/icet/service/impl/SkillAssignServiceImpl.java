@@ -26,7 +26,7 @@ public class SkillAssignServiceImpl implements SkillAssignService {
     private final ModelMapper modelMapper;
 
     @Override
-    public SkillAssign assignSkillToEmployee(SkillAssign skillAssign) {
+    public void assignSkillToEmployee(SkillAssign skillAssign) {
         SkillEntity skill = skillRepository.findById(Long.parseLong(skillAssign.getSkillId()))
                 .orElseThrow(() -> new EntityNotFoundException("Skill not found"));
 
@@ -38,11 +38,11 @@ public class SkillAssignServiceImpl implements SkillAssignService {
         skillAssignEntity.setEmployee(employee);
 
         SkillAssignEntity savedSkillAssign = skillAssignRepository.save(skillAssignEntity);
-        return modelMapper.map(savedSkillAssign, SkillAssign.class);
+        modelMapper.map(savedSkillAssign, SkillAssign.class);
     }
 
     @Override
-    public SkillAssign updateSkillAssignment(Long skillAssignId, SkillAssign skillAssign) {
+    public void updateSkillAssignment(Long skillAssignId, SkillAssign skillAssign) {
         SkillAssignEntity existingSkillAssign = skillAssignRepository.findById(skillAssignId)
                 .orElseThrow(() -> new EntityNotFoundException("Skill Assignment not found"));
 
@@ -62,7 +62,7 @@ public class SkillAssignServiceImpl implements SkillAssignService {
         }
 
         SkillAssignEntity updatedSkillAssign = skillAssignRepository.save(existingSkillAssign);
-        return modelMapper.map(updatedSkillAssign, SkillAssign.class);
+        modelMapper.map(updatedSkillAssign, SkillAssign.class);
     }
 
     @Override

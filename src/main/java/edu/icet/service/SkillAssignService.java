@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface SkillAssignService {
-    SkillAssign assignSkillToEmployee(SkillAssign skillAssign);
-    SkillAssign updateSkillAssignment(Long skillAssignId, SkillAssign skillAssign);
+    void assignSkillToEmployee(SkillAssign skillAssign);
+    void updateSkillAssignment(Long skillAssignId, SkillAssign skillAssign);
     Optional<SkillAssign> getSkillAssignmentById(Long skillAssignId);
     List<SkillAssign> getAllSkillAssignments();
     List<SkillAssign> getSkillAssignmentsByEmployeeId(Long employeeId);

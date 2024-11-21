@@ -20,14 +20,14 @@ public class PerformanceServiceImpl implements PerformanceService {
     private final ModelMapper modelMapper;
 
     @Override
-    public Performance createPerformanceReview(Performance performance) {
+    public void createPerformanceReview(Performance performance) {
         PerformanceEntity performanceEntity = modelMapper.map(performance, PerformanceEntity.class);
         PerformanceEntity savedPerformance = performanceRepository.save(performanceEntity);
-        return modelMapper.map(savedPerformance, Performance.class);
+        modelMapper.map(savedPerformance, Performance.class);
     }
 
     @Override
-    public Performance updatePerformanceReview(Long performanceId, Performance performance) {
+    public void updatePerformanceReview(Long performanceId, Performance performance) {
         PerformanceEntity existingPerformance = performanceRepository.findById(performanceId)
                 .orElseThrow(() -> new EntityNotFoundException("Performance review not found"));
 
@@ -36,7 +36,7 @@ public class PerformanceServiceImpl implements PerformanceService {
         existingPerformance.setReviewStatus(performance.getReviewStatus());
 
         PerformanceEntity updatedPerformance = performanceRepository.save(existingPerformance);
-        return modelMapper.map(updatedPerformance, Performance.class);
+        modelMapper.map(updatedPerformance, Performance.class);
     }
 
     @Override

@@ -8,11 +8,8 @@ import edu.icet.entity.SkillAssignEntity;
 import edu.icet.entity.TaskEntity;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
-import org.modelmapper.PropertyMap;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import static org.hibernate.Hibernate.map;
 
 @Configuration
 public class Config {
