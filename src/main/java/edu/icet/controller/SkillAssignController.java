@@ -63,7 +63,7 @@ public class SkillAssignController {
         }
     }
 
-    @GetMapping("/get-skill-assignment-by-id/{employeeId}")
+    @GetMapping("/get-skill-assign-by-employeeId/{employeeId}")
     public ResponseEntity<Map<String, Object>> getSkillAssignmentsByEmployeeId(@PathVariable Long employeeId) {
         Map<String, Object> response = new HashMap<>();
         try {

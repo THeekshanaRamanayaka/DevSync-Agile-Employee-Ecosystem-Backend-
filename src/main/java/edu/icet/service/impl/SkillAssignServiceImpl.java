@@ -80,7 +80,7 @@ public class SkillAssignServiceImpl implements SkillAssignService {
 
     @Override
     public List<SkillAssign> getSkillAssignmentsByEmployeeId(Long employeeId) {
-        return skillAssignRepository.findByEmployee_EmployeeId(employeeId).stream()
+        return skillAssignRepository.findByEmployee_EmployeeIdNative(employeeId).stream()
                 .map(skillAssignEntity -> modelMapper.map(skillAssignEntity, SkillAssign.class))
                 .collect(Collectors.toList());
     }

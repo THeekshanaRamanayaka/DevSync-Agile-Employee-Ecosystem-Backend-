@@ -1,8 +1,10 @@
 package edu.icet.config;
 
 import edu.icet.dto.ProjectTeam;
+import edu.icet.dto.SkillAssign;
 import edu.icet.dto.Task;
 import edu.icet.entity.ProjectTeamEntity;
+import edu.icet.entity.SkillAssignEntity;
 import edu.icet.entity.TaskEntity;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
@@ -41,6 +43,12 @@ public class Config {
                 .addMappings(mapper -> {
                     mapper.map(src -> src.getId().getProjectId(), ProjectTeam::setProjectId);
                     mapper.map(src -> src.getId().getEmployeeId(), ProjectTeam::setEmployeeId);
+                });
+
+        modelMapper.createTypeMap(SkillAssignEntity.class, SkillAssign.class)
+                .addMappings(mapper -> {
+                    mapper.map(src -> src.getSkill().getSkillId(), SkillAssign::setSkillId);
+                    mapper.map(src -> src.getEmployee().getEmployeeId(), SkillAssign::setEmployeeId);
                 });
 
         return modelMapper;
