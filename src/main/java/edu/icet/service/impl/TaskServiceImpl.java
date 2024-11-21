@@ -84,24 +84,22 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public void deleteTask(Long taskId) {
-        if (!taskRepository.existsById(taskId)) {
-            throw new EntityNotFoundException("Task not found");
-        }
-        taskRepository.deleteById(taskId);
+        TaskEntity task = taskRepository.findById(taskId)
+                .orElseThrow(() -> new RuntimeException("Task not found with id: " + taskId));
+        task.setTaskStatus("Completed");
+        taskRepository.save(task);
     }
 
     @Override
     public List<Task> getTasksByProjectId(Long projectId) {
-        return taskRepository.findAll().stream()
-                .filter(taskEntity -> taskEntity.getProject().getProjectId().equals(projectId))
+        return taskRepository.findByProjectProjectId(projectId).stream()
                 .map(taskEntity -> modelMapper.map(taskEntity, Task.class))
                 .collect(Collectors.toList());
     }
 
     @Override
     public List<Task> getTasksByEmployeeId(Long employeeId) {
-        return taskRepository.findAll().stream()
-                .filter(taskEntity -> taskEntity.getEmployee().getEmployeeId().equals(employeeId))
+        return taskRepository.findByEmployeeEmployeeId(employeeId).stream()
                 .map(taskEntity -> modelMapper.map(taskEntity, Task.class))
                 .collect(Collectors.toList());
     }

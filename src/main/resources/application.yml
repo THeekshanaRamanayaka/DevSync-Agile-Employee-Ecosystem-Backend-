@@ -3,3 +3,7 @@ spring:
     url: jdbc:mysql://localhost:3306/DevSync_agile_employee_ecosystem?createDatabaseIfNotExist=true
     username: root
     password: my-secret-pw
+
+  jpa:
+    hibernate:
+      ddl-auto: update

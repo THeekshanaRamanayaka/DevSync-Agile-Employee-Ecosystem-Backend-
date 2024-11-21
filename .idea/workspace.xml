@@ -4,13 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7275e132-5aec-41df-b37f-58efb6d6a6e8" name="Changes" comment="project feature implement successful">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/icet/controller/TaskController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/icet/repository/TaskRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/TaskService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/impl/TaskServiceImpl.java" afterDir="false" />
+    <list default="true" id="7275e132-5aec-41df-b37f-58efb6d6a6e8" name="Changes" comment="Task feature implement successful">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/icet/controller/SkillAssignController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/icet/controller/SkillController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/icet/repository/SkillAssignRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/icet/repository/SkillRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/SkillAssignService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/SkillService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/impl/SkillAssignServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/impl/SkillServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/controller/ProjectTeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/controller/ProjectTeamController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/controller/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/dto/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/dto/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/entity/TaskEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/entity/TaskEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/repository/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/repository/TaskRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/service/ProjectTeamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/ProjectTeamService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/service/impl/ProjectTeamServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/impl/ProjectTeamServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/service/impl/TaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/service/impl/TaskServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732035248722</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Task feature implement successful">
+      <option name="closed" value="true" />
+      <created>1732039791952</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732039791952</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -140,6 +161,7 @@
     <MESSAGE value="fix errors" />
     <MESSAGE value="department feature implement successful" />
     <MESSAGE value="project feature implement successful" />
-    <option name="LAST_COMMIT_MESSAGE" value="project feature implement successful" />
+    <MESSAGE value="Task feature implement successful" />
+    <option name="LAST_COMMIT_MESSAGE" value="Task feature implement successful" />
   </component>
 </project>

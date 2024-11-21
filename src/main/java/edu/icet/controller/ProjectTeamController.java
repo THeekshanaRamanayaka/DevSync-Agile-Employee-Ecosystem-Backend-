@@ -32,7 +32,7 @@ public class ProjectTeamController {
         }
     }
 
-    @GetMapping("/get-team-members")
+    @GetMapping("/get-team-members/{projectId}")
     public ResponseEntity<Map<String, Object>> getTeamMembersByProject(@PathVariable Long projectId) {
         Map<String, Object> response = new HashMap<>();
         try {

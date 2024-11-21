@@ -12,6 +12,7 @@ import edu.icet.service.ProjectTeamService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,8 @@ public class ProjectTeamServiceImpl implements ProjectTeamService {
     private final ModelMapper modelMapper;
 
     @Override
-    public ProjectTeam addTeamMember(ProjectTeam projectTeam) {
+    @Transactional
+    public void addTeamMember(ProjectTeam projectTeam) {
         ProjectEntity project = projectRepository.findById(projectTeam.getProjectId())
                 .orElseThrow(() -> new RuntimeException("Project not found with id: " + projectTeam.getProjectId()));
 
@@ -45,10 +47,11 @@ public class ProjectTeamServiceImpl implements ProjectTeamService {
         teamEntity.setEmployee(employee);
 
         ProjectTeamEntity savedEntity = projectTeamRepository.save(teamEntity);
-        return modelMapper.map(savedEntity, ProjectTeam.class);
+        modelMapper.map(savedEntity, ProjectTeam.class);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<ProjectTeam> getTeamMembersByProjectId(Long projectId) {
         if (!projectRepository.existsById(projectId)) {
             throw new RuntimeException("Project not found with id: " + projectId);
@@ -61,12 +64,12 @@ public class ProjectTeamServiceImpl implements ProjectTeamService {
     }
 
     @Override
+    @Transactional
     public void removeTeamMember(Long projectId, Long employeeId) {
         ProjectTeamId teamId = new ProjectTeamId(projectId, employeeId);
         if (!projectTeamRepository.existsById(teamId)) {
             throw new RuntimeException("Team not found");
         }
-
         projectTeamRepository.deleteById(teamId);
     }
 }
