@@ -64,11 +64,11 @@ public class EmployeeController {
         }
     }
 
-    @PutMapping("/update-employee")
-    public ResponseEntity<Map<String, Object>> updateEmployee(@RequestBody Employee employee) {
+    @PutMapping("/update-employee/{id}")
+    public ResponseEntity<Map<String, Object>> updateEmployee(@PathVariable Long id, @RequestBody Employee employee) {
         Map<String, Object> response = new HashMap<>();
         try {
-            employeeService.updateEmployee(employee);
+            employeeService.updateEmployee(id, employee);
             response.put("status", "SUCCESS");
             response.put("message", "Employee updated successfully");
             return ResponseEntity.ok(response);

@@ -7,6 +7,6 @@ public interface EmployeeService {
     void saveEmployee(Employee employee);
     List<Employee> getAllEmployees();
     Employee getEmployeeById(Long id);
-    void updateEmployee(Employee employee);
+    void updateEmployee(Long id, Employee employee);
     void deleteEmployee(Long id);
 }

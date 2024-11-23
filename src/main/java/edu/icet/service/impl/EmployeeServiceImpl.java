@@ -68,13 +68,19 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void updateEmployee(Employee employee) {
-        employeeRepository.findById(employee.getEmployeeId())
-                .orElseThrow(() -> new RuntimeException("Employee not found with id: " + employee.getEmployeeId()));
+    public void updateEmployee(Long id, Employee employee) {
+        EmployeeEntity existingEmployee = employeeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Employee not found with id: " + id));
+
+//        if (!existingEmployee.getEmail().equals(employee.getEmail()) &&
+//                employeeRepository.existsByEmail(employee.getEmail())) {
+//            throw new RuntimeException("Employee already exists with email: " + employee.getEmail());
+//        }
+
+        employee.setEmployeeId(id);
+        employee.setJoinDate(String.valueOf(existingEmployee.getJoinDate()));  // Preserve original join date
 
         EmployeeEntity employeeEntity = modelMapper.map(employee, EmployeeEntity.class);
-        employeeEntity.setJoinDate(LocalDate.parse(employee.getJoinDate()));
-
         EmployeeEntity updatedEmployee = employeeRepository.save(employeeEntity);
         modelMapper.map(updatedEmployee, Employee.class);
     }
